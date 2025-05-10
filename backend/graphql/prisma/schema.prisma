@@ -1,0 +1,140 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// Table for roles, to support many-to-many with users
+model Role {
+  id    String  @id @default(uuid())
+  name  String  @unique
+  users User[]  @relation("UserRoles")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  firstName String
+  lastName  String?
+  phone     String?
+  username  String   @unique
+  password  String
+  isVerified Boolean @default(false)
+  tokens    RefreshToken[]
+  images    UserImage[]
+  reservations Reservation[]
+  reviews   Review[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Payment Payment[]
+  Place Place[]
+  Role Role[] @relation("UserRoles")
+}
+
+model RefreshToken {
+  id         String   @id @default(uuid())
+  token      String   @unique
+  expiresAt  DateTime
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId     String
+  createdAt  DateTime @default(now())
+}
+
+model UserImage {
+  id     String @id @default(uuid())
+  url    String
+  type   String
+  user   User   @relation(fields: [userId], references: [id])
+  userId String
+}
+
+model Place {
+  id          String        @id @default(uuid())
+  name        String
+  description String
+  category    String
+  price       Float
+  location Unsupported("POINT")
+  provider    User          @relation(fields: [providerId], references: [id])
+  providerId  String
+  images      PlaceImage[]
+  tags        Tag[]
+  reservations Reservation[]
+  reviews     Review[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+}
+
+model PlaceImage {
+  id      String @id @default(uuid())
+  url     String
+  place   Place  @relation(fields: [placeId], references: [id])
+  placeId String
+}
+
+model Tag {
+  id      String @id @default(uuid())
+  name    String
+  place   Place  @relation(fields: [placeId], references: [id])
+  placeId String
+}
+
+model Reservation {
+  id         String   @id @default(uuid())
+  user       User     @relation(fields: [userId], references: [id])
+  userId     String
+  place      Place    @relation(fields: [placeId], references: [id])
+  placeId    String
+  status     String
+  date       DateTime
+  payment    Payment?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Payment {
+  id            String       @id @default(uuid())
+  user          User         @relation(fields: [userId], references: [id])
+  userId        String
+  reservation   Reservation  @relation(fields: [reservationId], references: [id])
+  reservationId String @unique
+  amount        Float
+  method        String
+  status        String
+  createdAt     DateTime     @default(now())
+}
+
+model Review {
+  id        String   @id @default(uuid())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  place     Place    @relation(fields: [placeId], references: [id])
+  placeId   String
+  comment   String
+  rating    Int
+  createdAt DateTime @default(now())
+}
+
+generator nestgraphql {
+  prismaClientImport = "@my-relax-app/shared-prisma" // chemin relatif vers prisma
+  provider = "prisma-nestjs-graphql"     // le plugin
+  output   = "../../shared-dtos/src/lib/dtos"  // chemin relatif vers DTOs
+  // options facultatives
+  // pour générer à la fois les @ObjectType, @InputType et @ArgsType
+  emitInputAndArgsTypes = true
+  // pour ajouter automatiquement les métadonnées @Field, @ObjectType…
+  emitGraphQLTypes = true
+  // suffixes des classes générées
+  dtoModelNameSuffix = "Model"
+  dtoInputNameSuffix = "Input"
+}
