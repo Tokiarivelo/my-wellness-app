@@ -1,0 +1,60 @@
+import { Field } from '@nestjs/graphql';
+import { InputType } from '@nestjs/graphql';
+import { PaymentUncheckedCreateNestedManyWithoutUserInput } from '../payment/payment-unchecked-create-nested-many-without-user.input';
+import { RefreshTokenUncheckedCreateNestedManyWithoutUserInput } from '../refresh-token/refresh-token-unchecked-create-nested-many-without-user.input';
+import { ReservationUncheckedCreateNestedManyWithoutUserInput } from '../reservation/reservation-unchecked-create-nested-many-without-user.input';
+import { ReviewUncheckedCreateNestedManyWithoutUserInput } from '../review/review-unchecked-create-nested-many-without-user.input';
+import { UserImageUncheckedCreateNestedManyWithoutUserInput } from '../user-image/user-image-unchecked-create-nested-many-without-user.input';
+import { RoleUncheckedCreateNestedManyWithoutUsersInput } from '../role/role-unchecked-create-nested-many-without-users.input';
+
+@InputType()
+export class UserUncheckedCreateWithoutPlaceInput {
+
+    @Field(() => String, {nullable:true})
+    id?: string;
+
+    @Field(() => String, {nullable:false})
+    email!: string;
+
+    @Field(() => String, {nullable:false})
+    firstName!: string;
+
+    @Field(() => String, {nullable:true})
+    lastName?: string;
+
+    @Field(() => String, {nullable:true})
+    phone?: string;
+
+    @Field(() => String, {nullable:false})
+    username!: string;
+
+    @Field(() => String, {nullable:false})
+    password!: string;
+
+    @Field(() => Boolean, {nullable:true})
+    isVerified?: boolean;
+
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
+
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
+
+    @Field(() => PaymentUncheckedCreateNestedManyWithoutUserInput, {nullable:true})
+    Payment?: PaymentUncheckedCreateNestedManyWithoutUserInput;
+
+    @Field(() => RefreshTokenUncheckedCreateNestedManyWithoutUserInput, {nullable:true})
+    tokens?: RefreshTokenUncheckedCreateNestedManyWithoutUserInput;
+
+    @Field(() => ReservationUncheckedCreateNestedManyWithoutUserInput, {nullable:true})
+    reservations?: ReservationUncheckedCreateNestedManyWithoutUserInput;
+
+    @Field(() => ReviewUncheckedCreateNestedManyWithoutUserInput, {nullable:true})
+    reviews?: ReviewUncheckedCreateNestedManyWithoutUserInput;
+
+    @Field(() => UserImageUncheckedCreateNestedManyWithoutUserInput, {nullable:true})
+    images?: UserImageUncheckedCreateNestedManyWithoutUserInput;
+
+    @Field(() => RoleUncheckedCreateNestedManyWithoutUsersInput, {nullable:true})
+    Role?: RoleUncheckedCreateNestedManyWithoutUsersInput;
+}

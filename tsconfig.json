@@ -2,5 +2,27 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./apps/client-e2e"
+    },
+    {
+      "path": "./apps/client"
+    },
+    {
+      "path": "./apps/graphql-server-e2e"
+    },
+    {
+      "path": "./apps/graphql-server"
+    },
+    {
+      "path": "./libs/auth"
+    },
+    {
+      "path": "./libs/test"
+    },
+    {
+      "path": "./libs/data-transfert"
+    }
+  ]
 }

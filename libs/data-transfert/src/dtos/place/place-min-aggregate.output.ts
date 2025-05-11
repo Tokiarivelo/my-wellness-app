@@ -1,0 +1,31 @@
+import { Field } from '@nestjs/graphql';
+import { ObjectType } from '@nestjs/graphql';
+import { Float } from '@nestjs/graphql';
+
+@ObjectType()
+export class PlaceMinAggregate {
+
+    @Field(() => String, {nullable:true})
+    id?: string;
+
+    @Field(() => String, {nullable:true})
+    name?: string;
+
+    @Field(() => String, {nullable:true})
+    description?: string;
+
+    @Field(() => String, {nullable:true})
+    category?: string;
+
+    @Field(() => Float, {nullable:true})
+    price?: number;
+
+    @Field(() => String, {nullable:true})
+    providerId?: string;
+
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
+
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
+}
