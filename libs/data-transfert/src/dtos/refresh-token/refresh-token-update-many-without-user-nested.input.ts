@@ -5,7 +5,7 @@ import { Type } from 'class-transformer';
 import { RefreshTokenCreateOrConnectWithoutUserInput } from './refresh-token-create-or-connect-without-user.input';
 import { RefreshTokenUpsertWithWhereUniqueWithoutUserInput } from './refresh-token-upsert-with-where-unique-without-user.input';
 import { RefreshTokenCreateManyUserInputEnvelope } from './refresh-token-create-many-user-input-envelope.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { RefreshTokenWhereUniqueInput } from './refresh-token-where-unique.input';
 import { RefreshTokenUpdateWithWhereUniqueWithoutUserInput } from './refresh-token-update-with-where-unique-without-user.input';
 import { RefreshTokenUpdateManyWithWhereWithoutUserInput } from './refresh-token-update-many-with-where-without-user.input';

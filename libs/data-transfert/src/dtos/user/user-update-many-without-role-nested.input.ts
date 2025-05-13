@@ -4,7 +4,7 @@ import { UserCreateWithoutRoleInput } from './user-create-without-role.input';
 import { Type } from 'class-transformer';
 import { UserCreateOrConnectWithoutRoleInput } from './user-create-or-connect-without-role.input';
 import { UserUpsertWithWhereUniqueWithoutRoleInput } from './user-upsert-with-where-unique-without-role.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { UserWhereUniqueInput } from './user-where-unique.input';
 import { UserUpdateWithWhereUniqueWithoutRoleInput } from './user-update-with-where-unique-without-role.input';
 import { UserUpdateManyWithWhereWithoutRoleInput } from './user-update-many-with-where-without-role.input';

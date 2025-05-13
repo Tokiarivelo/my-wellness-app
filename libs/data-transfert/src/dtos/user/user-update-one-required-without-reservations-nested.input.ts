@@ -4,7 +4,7 @@ import { UserCreateWithoutReservationsInput } from './user-create-without-reserv
 import { Type } from 'class-transformer';
 import { UserCreateOrConnectWithoutReservationsInput } from './user-create-or-connect-without-reservations.input';
 import { UserUpsertWithoutReservationsInput } from './user-upsert-without-reservations.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { UserWhereUniqueInput } from './user-where-unique.input';
 import { UserUpdateToOneWithWhereWithoutReservationsInput } from './user-update-to-one-with-where-without-reservations.input';
 

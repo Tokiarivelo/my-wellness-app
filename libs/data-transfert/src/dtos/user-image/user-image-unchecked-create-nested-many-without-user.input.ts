@@ -4,7 +4,7 @@ import { UserImageCreateWithoutUserInput } from './user-image-create-without-use
 import { Type } from 'class-transformer';
 import { UserImageCreateOrConnectWithoutUserInput } from './user-image-create-or-connect-without-user.input';
 import { UserImageCreateManyUserInputEnvelope } from './user-image-create-many-user-input-envelope.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { UserImageWhereUniqueInput } from './user-image-where-unique.input';
 
 @InputType()

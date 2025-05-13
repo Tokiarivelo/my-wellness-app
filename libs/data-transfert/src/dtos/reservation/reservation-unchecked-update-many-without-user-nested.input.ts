@@ -5,7 +5,7 @@ import { Type } from 'class-transformer';
 import { ReservationCreateOrConnectWithoutUserInput } from './reservation-create-or-connect-without-user.input';
 import { ReservationUpsertWithWhereUniqueWithoutUserInput } from './reservation-upsert-with-where-unique-without-user.input';
 import { ReservationCreateManyUserInputEnvelope } from './reservation-create-many-user-input-envelope.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { ReservationWhereUniqueInput } from './reservation-where-unique.input';
 import { ReservationUpdateWithWhereUniqueWithoutUserInput } from './reservation-update-with-where-unique-without-user.input';
 import { ReservationUpdateManyWithWhereWithoutUserInput } from './reservation-update-many-with-where-without-user.input';

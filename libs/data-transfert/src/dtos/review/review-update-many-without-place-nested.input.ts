@@ -5,7 +5,7 @@ import { Type } from 'class-transformer';
 import { ReviewCreateOrConnectWithoutPlaceInput } from './review-create-or-connect-without-place.input';
 import { ReviewUpsertWithWhereUniqueWithoutPlaceInput } from './review-upsert-with-where-unique-without-place.input';
 import { ReviewCreateManyPlaceInputEnvelope } from './review-create-many-place-input-envelope.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { ReviewWhereUniqueInput } from './review-where-unique.input';
 import { ReviewUpdateWithWhereUniqueWithoutPlaceInput } from './review-update-with-where-unique-without-place.input';
 import { ReviewUpdateManyWithWhereWithoutPlaceInput } from './review-update-many-with-where-without-place.input';

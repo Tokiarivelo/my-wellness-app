@@ -3,30 +3,29 @@ import { ArgsType } from '@nestjs/graphql';
 import { ReservationWhereInput } from './reservation-where.input';
 import { Type } from 'class-transformer';
 import { ReservationOrderByWithRelationInput } from './reservation-order-by-with-relation.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { ReservationWhereUniqueInput } from './reservation-where-unique.input';
 import { Int } from '@nestjs/graphql';
 import { ReservationScalarFieldEnum } from './reservation-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstReservationArgs {
+  @Field(() => ReservationWhereInput, { nullable: true })
+  @Type(() => ReservationWhereInput)
+  where?: ReservationWhereInput;
 
-    @Field(() => ReservationWhereInput, {nullable:true})
-    @Type(() => ReservationWhereInput)
-    where?: ReservationWhereInput;
+  @Field(() => [ReservationOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<ReservationOrderByWithRelationInput>;
 
-    @Field(() => [ReservationOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<ReservationOrderByWithRelationInput>;
+  @Field(() => ReservationWhereUniqueInput, { nullable: true })
+  cursor?: Prisma.AtLeast<ReservationWhereUniqueInput, 'id'>;
 
-    @Field(() => ReservationWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<ReservationWhereUniqueInput, 'id'>;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [ReservationScalarFieldEnum], {nullable:true})
-    distinct?: Array<`${ReservationScalarFieldEnum}`>;
+  @Field(() => [ReservationScalarFieldEnum], { nullable: true })
+  distinct?: Array<ReservationScalarFieldEnum>;
 }

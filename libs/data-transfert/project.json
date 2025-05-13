@@ -8,7 +8,14 @@
         "tsConfig": "libs/data-transfert/tsconfig.lib.json",
         "packageJson": "libs/data-transfert/package.json",
         "main": "libs/data-transfert/src/index.ts",
-        "assets": ["libs/data-transfert/*.md"]
+        "assets": [
+          "libs/data-transfert/*.md",
+          {
+            "input": "libs/data-transfert/src/generated",
+            "glob": "**/*",
+            "output": "./src/generated"
+          }
+        ]
       }
     },
     "prisma-deploy": {

@@ -3,7 +3,7 @@ import { ArgsType } from '@nestjs/graphql';
 import { TagWhereInput } from './tag-where.input';
 import { Type } from 'class-transformer';
 import { TagOrderByWithRelationInput } from './tag-order-by-with-relation.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { TagWhereUniqueInput } from './tag-where-unique.input';
 import { Int } from '@nestjs/graphql';
 import { TagCountAggregateInput } from './tag-count-aggregate.input';

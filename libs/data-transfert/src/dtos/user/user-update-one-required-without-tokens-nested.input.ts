@@ -4,7 +4,7 @@ import { UserCreateWithoutTokensInput } from './user-create-without-tokens.input
 import { Type } from 'class-transformer';
 import { UserCreateOrConnectWithoutTokensInput } from './user-create-or-connect-without-tokens.input';
 import { UserUpsertWithoutTokensInput } from './user-upsert-without-tokens.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { UserWhereUniqueInput } from './user-where-unique.input';
 import { UserUpdateToOneWithWhereWithoutTokensInput } from './user-update-to-one-with-where-without-tokens.input';
 

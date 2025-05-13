@@ -4,7 +4,7 @@ import { UserCreateWithoutImagesInput } from './user-create-without-images.input
 import { Type } from 'class-transformer';
 import { UserCreateOrConnectWithoutImagesInput } from './user-create-or-connect-without-images.input';
 import { UserUpsertWithoutImagesInput } from './user-upsert-without-images.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { UserWhereUniqueInput } from './user-where-unique.input';
 import { UserUpdateToOneWithWhereWithoutImagesInput } from './user-update-to-one-with-where-without-images.input';
 

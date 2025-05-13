@@ -3,7 +3,7 @@ import { ArgsType } from '@nestjs/graphql';
 import { PlaceWhereInput } from './place-where.input';
 import { Type } from 'class-transformer';
 import { PlaceOrderByWithRelationInput } from './place-order-by-with-relation.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { PlaceWhereUniqueInput } from './place-where-unique.input';
 import { Int } from '@nestjs/graphql';
 import { PlaceCountAggregateInput } from './place-count-aggregate.input';

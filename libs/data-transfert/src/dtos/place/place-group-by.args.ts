@@ -14,38 +14,37 @@ import { PlaceMaxAggregateInput } from './place-max-aggregate.input';
 
 @ArgsType()
 export class PlaceGroupByArgs {
+  @Field(() => PlaceWhereInput, { nullable: true })
+  @Type(() => PlaceWhereInput)
+  where?: PlaceWhereInput;
 
-    @Field(() => PlaceWhereInput, {nullable:true})
-    @Type(() => PlaceWhereInput)
-    where?: PlaceWhereInput;
+  @Field(() => [PlaceOrderByWithAggregationInput], { nullable: true })
+  orderBy?: Array<PlaceOrderByWithAggregationInput>;
 
-    @Field(() => [PlaceOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<PlaceOrderByWithAggregationInput>;
+  @Field(() => [PlaceScalarFieldEnum], { nullable: false })
+  by!: Array<PlaceScalarFieldEnum>;
 
-    @Field(() => [PlaceScalarFieldEnum], {nullable:false})
-    by!: Array<`${PlaceScalarFieldEnum}`>;
+  @Field(() => PlaceScalarWhereWithAggregatesInput, { nullable: true })
+  having?: PlaceScalarWhereWithAggregatesInput;
 
-    @Field(() => PlaceScalarWhereWithAggregatesInput, {nullable:true})
-    having?: PlaceScalarWhereWithAggregatesInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => PlaceCountAggregateInput, { nullable: true })
+  _count?: PlaceCountAggregateInput;
 
-    @Field(() => PlaceCountAggregateInput, {nullable:true})
-    _count?: PlaceCountAggregateInput;
+  @Field(() => PlaceAvgAggregateInput, { nullable: true })
+  _avg?: PlaceAvgAggregateInput;
 
-    @Field(() => PlaceAvgAggregateInput, {nullable:true})
-    _avg?: PlaceAvgAggregateInput;
+  @Field(() => PlaceSumAggregateInput, { nullable: true })
+  _sum?: PlaceSumAggregateInput;
 
-    @Field(() => PlaceSumAggregateInput, {nullable:true})
-    _sum?: PlaceSumAggregateInput;
+  @Field(() => PlaceMinAggregateInput, { nullable: true })
+  _min?: PlaceMinAggregateInput;
 
-    @Field(() => PlaceMinAggregateInput, {nullable:true})
-    _min?: PlaceMinAggregateInput;
-
-    @Field(() => PlaceMaxAggregateInput, {nullable:true})
-    _max?: PlaceMaxAggregateInput;
+  @Field(() => PlaceMaxAggregateInput, { nullable: true })
+  _max?: PlaceMaxAggregateInput;
 }

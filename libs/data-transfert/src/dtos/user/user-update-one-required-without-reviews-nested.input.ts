@@ -4,7 +4,7 @@ import { UserCreateWithoutReviewsInput } from './user-create-without-reviews.inp
 import { Type } from 'class-transformer';
 import { UserCreateOrConnectWithoutReviewsInput } from './user-create-or-connect-without-reviews.input';
 import { UserUpsertWithoutReviewsInput } from './user-upsert-without-reviews.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { UserWhereUniqueInput } from './user-where-unique.input';
 import { UserUpdateToOneWithWhereWithoutReviewsInput } from './user-update-to-one-with-where-without-reviews.input';
 

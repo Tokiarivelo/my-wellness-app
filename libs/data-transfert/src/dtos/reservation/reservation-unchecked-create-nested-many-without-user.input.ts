@@ -4,7 +4,7 @@ import { ReservationCreateWithoutUserInput } from './reservation-create-without-
 import { Type } from 'class-transformer';
 import { ReservationCreateOrConnectWithoutUserInput } from './reservation-create-or-connect-without-user.input';
 import { ReservationCreateManyUserInputEnvelope } from './reservation-create-many-user-input-envelope.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { ReservationWhereUniqueInput } from './reservation-where-unique.input';
 
 @InputType()

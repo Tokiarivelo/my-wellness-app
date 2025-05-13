@@ -12,32 +12,31 @@ import { ReservationMaxAggregateInput } from './reservation-max-aggregate.input'
 
 @ArgsType()
 export class ReservationGroupByArgs {
+  @Field(() => ReservationWhereInput, { nullable: true })
+  @Type(() => ReservationWhereInput)
+  where?: ReservationWhereInput;
 
-    @Field(() => ReservationWhereInput, {nullable:true})
-    @Type(() => ReservationWhereInput)
-    where?: ReservationWhereInput;
+  @Field(() => [ReservationOrderByWithAggregationInput], { nullable: true })
+  orderBy?: Array<ReservationOrderByWithAggregationInput>;
 
-    @Field(() => [ReservationOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<ReservationOrderByWithAggregationInput>;
+  @Field(() => [ReservationScalarFieldEnum], { nullable: false })
+  by!: Array<ReservationScalarFieldEnum>;
 
-    @Field(() => [ReservationScalarFieldEnum], {nullable:false})
-    by!: Array<`${ReservationScalarFieldEnum}`>;
+  @Field(() => ReservationScalarWhereWithAggregatesInput, { nullable: true })
+  having?: ReservationScalarWhereWithAggregatesInput;
 
-    @Field(() => ReservationScalarWhereWithAggregatesInput, {nullable:true})
-    having?: ReservationScalarWhereWithAggregatesInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => ReservationCountAggregateInput, { nullable: true })
+  _count?: ReservationCountAggregateInput;
 
-    @Field(() => ReservationCountAggregateInput, {nullable:true})
-    _count?: ReservationCountAggregateInput;
+  @Field(() => ReservationMinAggregateInput, { nullable: true })
+  _min?: ReservationMinAggregateInput;
 
-    @Field(() => ReservationMinAggregateInput, {nullable:true})
-    _min?: ReservationMinAggregateInput;
-
-    @Field(() => ReservationMaxAggregateInput, {nullable:true})
-    _max?: ReservationMaxAggregateInput;
+  @Field(() => ReservationMaxAggregateInput, { nullable: true })
+  _max?: ReservationMaxAggregateInput;
 }

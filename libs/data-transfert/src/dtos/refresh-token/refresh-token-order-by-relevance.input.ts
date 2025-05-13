@@ -5,13 +5,12 @@ import { SortOrder } from '../prisma/sort-order.enum';
 
 @InputType()
 export class RefreshTokenOrderByRelevanceInput {
+  @Field(() => [RefreshTokenOrderByRelevanceFieldEnum], { nullable: false })
+  fields!: Array<RefreshTokenOrderByRelevanceFieldEnum>;
 
-    @Field(() => [RefreshTokenOrderByRelevanceFieldEnum], {nullable:false})
-    fields!: Array<`${RefreshTokenOrderByRelevanceFieldEnum}`>;
+  @Field(() => SortOrder, { nullable: false })
+  sort!: `${SortOrder}`;
 
-    @Field(() => SortOrder, {nullable:false})
-    sort!: `${SortOrder}`;
-
-    @Field(() => String, {nullable:false})
-    search!: string;
+  @Field(() => String, { nullable: false })
+  search!: string;
 }

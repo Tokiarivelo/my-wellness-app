@@ -4,7 +4,7 @@ import { ReservationCreateWithoutPaymentInput } from './reservation-create-witho
 import { Type } from 'class-transformer';
 import { ReservationCreateOrConnectWithoutPaymentInput } from './reservation-create-or-connect-without-payment.input';
 import { ReservationUpsertWithoutPaymentInput } from './reservation-upsert-without-payment.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { ReservationWhereUniqueInput } from './reservation-where-unique.input';
 import { ReservationUpdateToOneWithWhereWithoutPaymentInput } from './reservation-update-to-one-with-where-without-payment.input';
 

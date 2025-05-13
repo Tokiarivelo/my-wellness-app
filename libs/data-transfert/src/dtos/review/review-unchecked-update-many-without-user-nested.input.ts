@@ -5,7 +5,7 @@ import { Type } from 'class-transformer';
 import { ReviewCreateOrConnectWithoutUserInput } from './review-create-or-connect-without-user.input';
 import { ReviewUpsertWithWhereUniqueWithoutUserInput } from './review-upsert-with-where-unique-without-user.input';
 import { ReviewCreateManyUserInputEnvelope } from './review-create-many-user-input-envelope.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { ReviewWhereUniqueInput } from './review-where-unique.input';
 import { ReviewUpdateWithWhereUniqueWithoutUserInput } from './review-update-with-where-unique-without-user.input';
 import { ReviewUpdateManyWithWhereWithoutUserInput } from './review-update-many-with-where-without-user.input';

@@ -3,7 +3,7 @@ import { InputType } from '@nestjs/graphql';
 import { RoleCreateWithoutUsersInput } from './role-create-without-users.input';
 import { Type } from 'class-transformer';
 import { RoleCreateOrConnectWithoutUsersInput } from './role-create-or-connect-without-users.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { RoleWhereUniqueInput } from './role-where-unique.input';
 
 @InputType()

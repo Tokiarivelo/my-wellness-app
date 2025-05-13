@@ -5,7 +5,7 @@ import { Type } from 'class-transformer';
 import { PaymentCreateOrConnectWithoutReservationInput } from './payment-create-or-connect-without-reservation.input';
 import { PaymentUpsertWithoutReservationInput } from './payment-upsert-without-reservation.input';
 import { PaymentWhereInput } from './payment-where.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { PaymentWhereUniqueInput } from './payment-where-unique.input';
 import { PaymentUpdateToOneWithWhereWithoutReservationInput } from './payment-update-to-one-with-where-without-reservation.input';
 

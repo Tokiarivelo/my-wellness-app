@@ -4,7 +4,7 @@ import { PaymentCreateWithoutUserInput } from './payment-create-without-user.inp
 import { Type } from 'class-transformer';
 import { PaymentCreateOrConnectWithoutUserInput } from './payment-create-or-connect-without-user.input';
 import { PaymentCreateManyUserInputEnvelope } from './payment-create-many-user-input-envelope.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { PaymentWhereUniqueInput } from './payment-where-unique.input';
 
 @InputType()

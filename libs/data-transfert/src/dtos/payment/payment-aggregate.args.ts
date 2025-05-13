@@ -3,7 +3,7 @@ import { ArgsType } from '@nestjs/graphql';
 import { PaymentWhereInput } from './payment-where.input';
 import { Type } from 'class-transformer';
 import { PaymentOrderByWithRelationInput } from './payment-order-by-with-relation.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { PaymentWhereUniqueInput } from './payment-where-unique.input';
 import { Int } from '@nestjs/graphql';
 import { PaymentCountAggregateInput } from './payment-count-aggregate.input';

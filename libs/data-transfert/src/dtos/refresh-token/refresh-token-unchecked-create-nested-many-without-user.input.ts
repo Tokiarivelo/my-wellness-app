@@ -4,7 +4,7 @@ import { RefreshTokenCreateWithoutUserInput } from './refresh-token-create-witho
 import { Type } from 'class-transformer';
 import { RefreshTokenCreateOrConnectWithoutUserInput } from './refresh-token-create-or-connect-without-user.input';
 import { RefreshTokenCreateManyUserInputEnvelope } from './refresh-token-create-many-user-input-envelope.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { RefreshTokenWhereUniqueInput } from './refresh-token-where-unique.input';
 
 @InputType()

@@ -4,7 +4,7 @@ import { UserCreateWithoutPlaceInput } from './user-create-without-place.input';
 import { Type } from 'class-transformer';
 import { UserCreateOrConnectWithoutPlaceInput } from './user-create-or-connect-without-place.input';
 import { UserUpsertWithoutPlaceInput } from './user-upsert-without-place.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { UserWhereUniqueInput } from './user-where-unique.input';
 import { UserUpdateToOneWithWhereWithoutPlaceInput } from './user-update-to-one-with-where-without-place.input';
 

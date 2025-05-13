@@ -2,7 +2,7 @@ import { Field } from '@nestjs/graphql';
 import { ArgsType } from '@nestjs/graphql';
 import { TagUpdateInput } from './tag-update.input';
 import { Type } from 'class-transformer';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { TagWhereUniqueInput } from './tag-where-unique.input';
 
 @ArgsType()

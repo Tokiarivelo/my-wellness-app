@@ -4,7 +4,7 @@ import { ReviewCreateWithoutUserInput } from './review-create-without-user.input
 import { Type } from 'class-transformer';
 import { ReviewCreateOrConnectWithoutUserInput } from './review-create-or-connect-without-user.input';
 import { ReviewCreateManyUserInputEnvelope } from './review-create-many-user-input-envelope.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { ReviewWhereUniqueInput } from './review-where-unique.input';
 
 @InputType()

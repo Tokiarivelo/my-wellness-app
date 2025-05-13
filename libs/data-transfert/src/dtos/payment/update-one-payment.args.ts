@@ -2,7 +2,7 @@ import { Field } from '@nestjs/graphql';
 import { ArgsType } from '@nestjs/graphql';
 import { PaymentUpdateInput } from './payment-update.input';
 import { Type } from 'class-transformer';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { PaymentWhereUniqueInput } from './payment-where-unique.input';
 
 @ArgsType()

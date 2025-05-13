@@ -3,7 +3,7 @@ import { ArgsType } from '@nestjs/graphql';
 import { ReservationWhereInput } from './reservation-where.input';
 import { Type } from 'class-transformer';
 import { ReservationOrderByWithRelationInput } from './reservation-order-by-with-relation.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { ReservationWhereUniqueInput } from './reservation-where-unique.input';
 import { Int } from '@nestjs/graphql';
 import { ReservationCountAggregateInput } from './reservation-count-aggregate.input';

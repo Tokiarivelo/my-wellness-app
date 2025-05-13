@@ -3,7 +3,7 @@ import { ArgsType } from '@nestjs/graphql';
 import { RefreshTokenWhereInput } from './refresh-token-where.input';
 import { Type } from 'class-transformer';
 import { RefreshTokenOrderByWithRelationInput } from './refresh-token-order-by-with-relation.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { RefreshTokenWhereUniqueInput } from './refresh-token-where-unique.input';
 import { Int } from '@nestjs/graphql';
 import { RefreshTokenCountAggregateInput } from './refresh-token-count-aggregate.input';

@@ -5,7 +5,7 @@ import { Type } from 'class-transformer';
 import { PlaceImageCreateOrConnectWithoutPlaceInput } from './place-image-create-or-connect-without-place.input';
 import { PlaceImageUpsertWithWhereUniqueWithoutPlaceInput } from './place-image-upsert-with-where-unique-without-place.input';
 import { PlaceImageCreateManyPlaceInputEnvelope } from './place-image-create-many-place-input-envelope.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { PlaceImageWhereUniqueInput } from './place-image-where-unique.input';
 import { PlaceImageUpdateWithWhereUniqueWithoutPlaceInput } from './place-image-update-with-where-unique-without-place.input';
 import { PlaceImageUpdateManyWithWhereWithoutPlaceInput } from './place-image-update-many-with-where-without-place.input';

@@ -5,7 +5,7 @@ import { Type } from 'class-transformer';
 import { TagCreateOrConnectWithoutPlaceInput } from './tag-create-or-connect-without-place.input';
 import { TagUpsertWithWhereUniqueWithoutPlaceInput } from './tag-upsert-with-where-unique-without-place.input';
 import { TagCreateManyPlaceInputEnvelope } from './tag-create-many-place-input-envelope.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { TagWhereUniqueInput } from './tag-where-unique.input';
 import { TagUpdateWithWhereUniqueWithoutPlaceInput } from './tag-update-with-where-unique-without-place.input';
 import { TagUpdateManyWithWhereWithoutPlaceInput } from './tag-update-many-with-where-without-place.input';

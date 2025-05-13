@@ -3,7 +3,7 @@ import { ArgsType } from '@nestjs/graphql';
 import { UserWhereInput } from './user-where.input';
 import { Type } from 'class-transformer';
 import { UserOrderByWithRelationInput } from './user-order-by-with-relation.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { UserWhereUniqueInput } from './user-where-unique.input';
 import { Int } from '@nestjs/graphql';
 import { UserCountAggregateInput } from './user-count-aggregate.input';

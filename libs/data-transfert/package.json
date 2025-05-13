@@ -5,6 +5,9 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "scripts": {
+    "prisma:patch-enums": "sed -i \"s/Array<\\`\\${\\(\\w*\\)}\\`>/\\1[]/g\" ./src/generated/client/**/*.ts"
+  },
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -19,6 +22,8 @@
     "@nestjs/common": "^11.1.0",
     "@nestjs/graphql": "^13.1.0",
     "class-transformer": "^0.5.1",
-    "@prisma/client": "^6.7.0"
+    "class-validator": "^0.14.0",
+    "reflect-metadata": "^0.1.13",
+    "@graphql-codegen/cli": "^5.0.6"
   }
 }

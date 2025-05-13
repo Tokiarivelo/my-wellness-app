@@ -1,17 +1,18 @@
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
-import { UserCreateInput, FindManyUserArgs } from '@wellness-app/shared-dtos';
+import {
+  UserCreateInput,
+  FindManyUserArgs,
+  User,
+} from '@wellness-app/data-transfert';
 import { UsersService } from './users.service';
-import { User } from '@wellness-app/shared-dtos';
 
 @Resolver(() => User)
 export class UsersResolver {
   constructor(private readonly usersService: UsersService) {}
 
   @Query(() => [User], { name: 'users' })
-  async getAll(
-    @Args('usersArgs') mayUserArgs: FindManyUserArgs
-  ): Promise<User[] | null> {
-    return this.usersService.findAll(mayUserArgs);
+  async getAll(@Args() manyUserArgs: FindManyUserArgs): Promise<User[] | null> {
+    return this.usersService.findAll(manyUserArgs);
   }
 
   @Query(() => User, { name: 'user' })

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "composite": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,
@@ -16,6 +17,12 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["development"]
+    "customConditions": ["development"],
+    "paths": {
+      "@wellness-app/data-transfert": ["libs/data-transfert/src/index.ts"],
+      "@wellness-app/data-transfert/prisma": [
+        "libs/data-transfert/src/prisma-module/index.ts"
+      ]
+    }
   }
 }

@@ -12,32 +12,31 @@ import { UserImageMaxAggregateInput } from './user-image-max-aggregate.input';
 
 @ArgsType()
 export class UserImageGroupByArgs {
+  @Field(() => UserImageWhereInput, { nullable: true })
+  @Type(() => UserImageWhereInput)
+  where?: UserImageWhereInput;
 
-    @Field(() => UserImageWhereInput, {nullable:true})
-    @Type(() => UserImageWhereInput)
-    where?: UserImageWhereInput;
+  @Field(() => [UserImageOrderByWithAggregationInput], { nullable: true })
+  orderBy?: Array<UserImageOrderByWithAggregationInput>;
 
-    @Field(() => [UserImageOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<UserImageOrderByWithAggregationInput>;
+  @Field(() => [UserImageScalarFieldEnum], { nullable: false })
+  by!: Array<UserImageScalarFieldEnum>;
 
-    @Field(() => [UserImageScalarFieldEnum], {nullable:false})
-    by!: Array<`${UserImageScalarFieldEnum}`>;
+  @Field(() => UserImageScalarWhereWithAggregatesInput, { nullable: true })
+  having?: UserImageScalarWhereWithAggregatesInput;
 
-    @Field(() => UserImageScalarWhereWithAggregatesInput, {nullable:true})
-    having?: UserImageScalarWhereWithAggregatesInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => UserImageCountAggregateInput, { nullable: true })
+  _count?: UserImageCountAggregateInput;
 
-    @Field(() => UserImageCountAggregateInput, {nullable:true})
-    _count?: UserImageCountAggregateInput;
+  @Field(() => UserImageMinAggregateInput, { nullable: true })
+  _min?: UserImageMinAggregateInput;
 
-    @Field(() => UserImageMinAggregateInput, {nullable:true})
-    _min?: UserImageMinAggregateInput;
-
-    @Field(() => UserImageMaxAggregateInput, {nullable:true})
-    _max?: UserImageMaxAggregateInput;
+  @Field(() => UserImageMaxAggregateInput, { nullable: true })
+  _max?: UserImageMaxAggregateInput;
 }

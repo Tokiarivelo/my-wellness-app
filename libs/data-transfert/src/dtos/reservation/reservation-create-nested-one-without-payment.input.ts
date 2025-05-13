@@ -3,7 +3,7 @@ import { InputType } from '@nestjs/graphql';
 import { ReservationCreateWithoutPaymentInput } from './reservation-create-without-payment.input';
 import { Type } from 'class-transformer';
 import { ReservationCreateOrConnectWithoutPaymentInput } from './reservation-create-or-connect-without-payment.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { ReservationWhereUniqueInput } from './reservation-where-unique.input';
 
 @InputType()

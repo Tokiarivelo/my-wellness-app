@@ -14,38 +14,37 @@ import { ReviewMaxAggregateInput } from './review-max-aggregate.input';
 
 @ArgsType()
 export class ReviewGroupByArgs {
+  @Field(() => ReviewWhereInput, { nullable: true })
+  @Type(() => ReviewWhereInput)
+  where?: ReviewWhereInput;
 
-    @Field(() => ReviewWhereInput, {nullable:true})
-    @Type(() => ReviewWhereInput)
-    where?: ReviewWhereInput;
+  @Field(() => [ReviewOrderByWithAggregationInput], { nullable: true })
+  orderBy?: Array<ReviewOrderByWithAggregationInput>;
 
-    @Field(() => [ReviewOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<ReviewOrderByWithAggregationInput>;
+  @Field(() => [ReviewScalarFieldEnum], { nullable: false })
+  by!: Array<ReviewScalarFieldEnum>;
 
-    @Field(() => [ReviewScalarFieldEnum], {nullable:false})
-    by!: Array<`${ReviewScalarFieldEnum}`>;
+  @Field(() => ReviewScalarWhereWithAggregatesInput, { nullable: true })
+  having?: ReviewScalarWhereWithAggregatesInput;
 
-    @Field(() => ReviewScalarWhereWithAggregatesInput, {nullable:true})
-    having?: ReviewScalarWhereWithAggregatesInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => ReviewCountAggregateInput, { nullable: true })
+  _count?: ReviewCountAggregateInput;
 
-    @Field(() => ReviewCountAggregateInput, {nullable:true})
-    _count?: ReviewCountAggregateInput;
+  @Field(() => ReviewAvgAggregateInput, { nullable: true })
+  _avg?: ReviewAvgAggregateInput;
 
-    @Field(() => ReviewAvgAggregateInput, {nullable:true})
-    _avg?: ReviewAvgAggregateInput;
+  @Field(() => ReviewSumAggregateInput, { nullable: true })
+  _sum?: ReviewSumAggregateInput;
 
-    @Field(() => ReviewSumAggregateInput, {nullable:true})
-    _sum?: ReviewSumAggregateInput;
+  @Field(() => ReviewMinAggregateInput, { nullable: true })
+  _min?: ReviewMinAggregateInput;
 
-    @Field(() => ReviewMinAggregateInput, {nullable:true})
-    _min?: ReviewMinAggregateInput;
-
-    @Field(() => ReviewMaxAggregateInput, {nullable:true})
-    _max?: ReviewMaxAggregateInput;
+  @Field(() => ReviewMaxAggregateInput, { nullable: true })
+  _max?: ReviewMaxAggregateInput;
 }

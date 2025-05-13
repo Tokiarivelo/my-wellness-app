@@ -3,7 +3,7 @@ import { ArgsType } from '@nestjs/graphql';
 import { UserImageWhereInput } from './user-image-where.input';
 import { Type } from 'class-transformer';
 import { UserImageOrderByWithRelationInput } from './user-image-order-by-with-relation.input';
-import { Prisma } from '../../.generated/prisma/client';
+import { Prisma } from '../../prisma-module';
 import { UserImageWhereUniqueInput } from './user-image-where-unique.input';
 import { Int } from '@nestjs/graphql';
 import { UserImageCountAggregateInput } from './user-image-count-aggregate.input';

@@ -5,13 +5,12 @@ import { SortOrder } from '../prisma/sort-order.enum';
 
 @InputType()
 export class PlaceImageOrderByRelevanceInput {
+  @Field(() => [PlaceImageOrderByRelevanceFieldEnum], { nullable: false })
+  fields!: Array<PlaceImageOrderByRelevanceFieldEnum>;
 
-    @Field(() => [PlaceImageOrderByRelevanceFieldEnum], {nullable:false})
-    fields!: Array<`${PlaceImageOrderByRelevanceFieldEnum}`>;
+  @Field(() => SortOrder, { nullable: false })
+  sort!: `${SortOrder}`;
 
-    @Field(() => SortOrder, {nullable:false})
-    sort!: `${SortOrder}`;
-
-    @Field(() => String, {nullable:false})
-    search!: string;
+  @Field(() => String, { nullable: false })
+  search!: string;
 }

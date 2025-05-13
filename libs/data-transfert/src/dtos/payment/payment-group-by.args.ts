@@ -14,38 +14,37 @@ import { PaymentMaxAggregateInput } from './payment-max-aggregate.input';
 
 @ArgsType()
 export class PaymentGroupByArgs {
+  @Field(() => PaymentWhereInput, { nullable: true })
+  @Type(() => PaymentWhereInput)
+  where?: PaymentWhereInput;
 
-    @Field(() => PaymentWhereInput, {nullable:true})
-    @Type(() => PaymentWhereInput)
-    where?: PaymentWhereInput;
+  @Field(() => [PaymentOrderByWithAggregationInput], { nullable: true })
+  orderBy?: Array<PaymentOrderByWithAggregationInput>;
 
-    @Field(() => [PaymentOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<PaymentOrderByWithAggregationInput>;
+  @Field(() => [PaymentScalarFieldEnum], { nullable: false })
+  by!: Array<PaymentScalarFieldEnum>;
 
-    @Field(() => [PaymentScalarFieldEnum], {nullable:false})
-    by!: Array<`${PaymentScalarFieldEnum}`>;
+  @Field(() => PaymentScalarWhereWithAggregatesInput, { nullable: true })
+  having?: PaymentScalarWhereWithAggregatesInput;
 
-    @Field(() => PaymentScalarWhereWithAggregatesInput, {nullable:true})
-    having?: PaymentScalarWhereWithAggregatesInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => PaymentCountAggregateInput, { nullable: true })
+  _count?: PaymentCountAggregateInput;
 
-    @Field(() => PaymentCountAggregateInput, {nullable:true})
-    _count?: PaymentCountAggregateInput;
+  @Field(() => PaymentAvgAggregateInput, { nullable: true })
+  _avg?: PaymentAvgAggregateInput;
 
-    @Field(() => PaymentAvgAggregateInput, {nullable:true})
-    _avg?: PaymentAvgAggregateInput;
+  @Field(() => PaymentSumAggregateInput, { nullable: true })
+  _sum?: PaymentSumAggregateInput;
 
-    @Field(() => PaymentSumAggregateInput, {nullable:true})
-    _sum?: PaymentSumAggregateInput;
+  @Field(() => PaymentMinAggregateInput, { nullable: true })
+  _min?: PaymentMinAggregateInput;
 
-    @Field(() => PaymentMinAggregateInput, {nullable:true})
-    _min?: PaymentMinAggregateInput;
-
-    @Field(() => PaymentMaxAggregateInput, {nullable:true})
-    _max?: PaymentMaxAggregateInput;
+  @Field(() => PaymentMaxAggregateInput, { nullable: true })
+  _max?: PaymentMaxAggregateInput;
 }
