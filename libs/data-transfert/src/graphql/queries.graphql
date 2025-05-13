@@ -1,8 +1,0 @@
-query GetPlacesNearby($lat: Float!, $lng: Float!) {
-  placesNearby(lat: $lat, lng: $lng) {
-    id
-    name
-    category
-    price
-  }
-}

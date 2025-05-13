@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "monorepo": true,
+  "root": "apps/graphql-server",
+  "compilerOptions": {
+    "tsConfigPath": "apps/graphql-server/tsconfig.app.json"
+  },
+
+  "projects": {
+    "graphql-server": {
+      "type": "application",
+      "root": "apps/graphql-server",
+      "sourceRoot": "apps/graphql-server/src",
+      "entryFile": "src/main.ts",
+      "compilerOptions": {
+        "tsConfigPath": "apps/graphql-server/tsconfig.app.json"
+      }
+    },
+    "data-transfert": {
+      "type": "library",
+      "root": "libs/data-transfert",
+      "sourceRoot": "libs/data-transfert/src",
+      "entryFile": "index.ts",
+      "compilerOptions": {
+        "tsConfigPath": "libs/data-transfert/tsconfig.lib.json"
+      }
+    }
+  }
+}

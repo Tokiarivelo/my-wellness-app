@@ -2,49 +2,7 @@
   "name": "@wellness-app/graphql-server",
   "version": "0.0.1",
   "private": true,
-  "nx": {
-    "targets": {
-      "build": {
-        "executor": "nx:run-commands",
-        "options": {
-          "command": "webpack-cli build",
-          "args": [
-            "node-env=production"
-          ]
-        },
-        "configurations": {
-          "development": {
-            "args": [
-              "node-env=development"
-            ]
-          }
-        }
-      },
-      "serve": {
-        "continuous": true,
-        "executor": "@nx/js:node",
-        "defaultConfiguration": "development",
-        "dependsOn": [
-          "build"
-        ],
-        "options": {
-          "buildTarget": "@wellness-app/graphql-server:build",
-          "runBuildTargetDependencies": false
-        },
-        "configurations": {
-          "development": {
-            "buildTarget": "@wellness-app/graphql-server:build:development"
-          },
-          "production": {
-            "buildTarget": "@wellness-app/graphql-server:build:production"
-          }
-        }
-      },
-      "test": {
-        "options": {
-          "passWithNoTests": true
-        }
-      }
-    }
+  "scripts": {
+    "start:dev": "ts-node -r tsconfig-paths/register src/main.ts"
   }
 }

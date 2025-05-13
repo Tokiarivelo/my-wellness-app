@@ -1,0 +1,28 @@
+mutation createUser($input: UserCreateInput!) {
+  createUser(input: $input) {
+    ...userFragment
+  }
+}
+# mutation updateUser($input: UpdateUserInput!) {
+#   updateUser(input: $input) {
+#     ...userFragment
+#   }
+# }
+# mutation deleteUser($id: ID!) {
+#   deleteUser(id: $id) {
+#     ...userFragment
+#   }
+# }
+# mutation login($input: LoginInput!) {
+#   login(input: $input) {
+#     token
+#     user {
+#       ...userFragment
+#     }
+#   }
+# }
+# mutation logout {
+#   logout {
+#     message
+#   }
+# }
