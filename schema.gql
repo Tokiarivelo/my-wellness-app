@@ -1,0 +1,1030 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input BoolFilter {
+  equals: Boolean
+  not: NestedBoolFilter
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+input DateTimeFilter {
+  equals: DateTime
+  gt: DateTime
+  gte: DateTime
+  in: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  not: NestedDateTimeFilter
+  notIn: [DateTime!]
+}
+
+input FloatFilter {
+  equals: Float
+  gt: Float
+  gte: Float
+  in: [Float!]
+  lt: Float
+  lte: Float
+  not: NestedFloatFilter
+  notIn: [Float!]
+}
+
+input IntFilter {
+  equals: Int
+  gt: Int
+  gte: Int
+  in: [Int!]
+  lt: Int
+  lte: Int
+  not: NestedIntFilter
+  notIn: [Int!]
+}
+
+type Mutation {
+  createUser(input: UserCreateInput!): User!
+}
+
+input NestedBoolFilter {
+  equals: Boolean
+  not: NestedBoolFilter
+}
+
+input NestedDateTimeFilter {
+  equals: DateTime
+  gt: DateTime
+  gte: DateTime
+  in: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  not: NestedDateTimeFilter
+  notIn: [DateTime!]
+}
+
+input NestedFloatFilter {
+  equals: Float
+  gt: Float
+  gte: Float
+  in: [Float!]
+  lt: Float
+  lte: Float
+  not: NestedFloatFilter
+  notIn: [Float!]
+}
+
+input NestedIntFilter {
+  equals: Int
+  gt: Int
+  gte: Int
+  in: [Int!]
+  lt: Int
+  lte: Int
+  not: NestedIntFilter
+  notIn: [Int!]
+}
+
+input NestedStringFilter {
+  contains: String
+  endsWith: String
+  equals: String
+  gt: String
+  gte: String
+  in: [String!]
+  lt: String
+  lte: String
+  not: NestedStringFilter
+  notIn: [String!]
+  search: String
+  startsWith: String
+}
+
+input NestedStringNullableFilter {
+  contains: String
+  endsWith: String
+  equals: String
+  gt: String
+  gte: String
+  in: [String!]
+  lt: String
+  lte: String
+  not: NestedStringNullableFilter
+  notIn: [String!]
+  search: String
+  startsWith: String
+}
+
+enum NullsOrder {
+  first
+  last
+}
+
+type Payment {
+  amount: Float!
+  createdAt: DateTime!
+  id: ID!
+  method: String!
+  reservation: Reservation!
+  reservationId: String!
+  status: String!
+  user: User!
+  userId: String!
+}
+
+input PaymentCreateManyUserInput {
+  amount: Float!
+  createdAt: DateTime
+  id: String
+  method: String!
+  reservationId: String!
+  status: String!
+}
+
+input PaymentCreateManyUserInputEnvelope {
+  data: [PaymentCreateManyUserInput!]!
+  skipDuplicates: Boolean
+}
+
+input PaymentCreateNestedManyWithoutUserInput {
+  connect: [PaymentWhereUniqueInput!]
+  connectOrCreate: [PaymentCreateOrConnectWithoutUserInput!]
+  create: [PaymentCreateWithoutUserInput!]
+  createMany: PaymentCreateManyUserInputEnvelope
+}
+
+input PaymentCreateNestedOneWithoutReservationInput {
+  connect: PaymentWhereUniqueInput
+  connectOrCreate: PaymentCreateOrConnectWithoutReservationInput
+  create: PaymentCreateWithoutReservationInput
+}
+
+input PaymentCreateOrConnectWithoutReservationInput {
+  create: PaymentCreateWithoutReservationInput!
+  where: PaymentWhereUniqueInput!
+}
+
+input PaymentCreateOrConnectWithoutUserInput {
+  create: PaymentCreateWithoutUserInput!
+  where: PaymentWhereUniqueInput!
+}
+
+input PaymentCreateWithoutReservationInput {
+  amount: Float!
+  createdAt: DateTime
+  id: String
+  method: String!
+  status: String!
+  user: UserCreateNestedOneWithoutPaymentInput!
+}
+
+input PaymentCreateWithoutUserInput {
+  amount: Float!
+  createdAt: DateTime
+  id: String
+  method: String!
+  reservation: ReservationCreateNestedOneWithoutPaymentInput!
+  status: String!
+}
+
+input PaymentListRelationFilter {
+  every: PaymentWhereInput
+  none: PaymentWhereInput
+  some: PaymentWhereInput
+}
+
+input PaymentNullableScalarRelationFilter {
+  is: PaymentWhereInput
+  isNot: PaymentWhereInput
+}
+
+input PaymentOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input PaymentWhereInput {
+  AND: [PaymentWhereInput!]
+  NOT: [PaymentWhereInput!]
+  OR: [PaymentWhereInput!]
+  amount: FloatFilter
+  createdAt: DateTimeFilter
+  id: StringFilter
+  method: StringFilter
+  reservation: ReservationScalarRelationFilter
+  reservationId: StringFilter
+  status: StringFilter
+  user: UserScalarRelationFilter
+  userId: StringFilter
+}
+
+input PaymentWhereUniqueInput {
+  AND: [PaymentWhereInput!]
+  NOT: [PaymentWhereInput!]
+  OR: [PaymentWhereInput!]
+  amount: FloatFilter
+  createdAt: DateTimeFilter
+  id: String
+  method: StringFilter
+  reservation: ReservationScalarRelationFilter
+  reservationId: String
+  status: StringFilter
+  user: UserScalarRelationFilter
+  userId: StringFilter
+}
+
+type Place {
+  _count: PlaceCount!
+  category: String!
+  createdAt: DateTime!
+  description: String!
+  id: ID!
+  images: [PlaceImage!]
+  name: String!
+  price: Float!
+  provider: User!
+  providerId: String!
+  reservations: [Reservation!]
+  reviews: [Review!]
+  tags: [Tag!]
+  updatedAt: DateTime!
+}
+
+type PlaceCount {
+  images: Int!
+  reservations: Int!
+  reviews: Int!
+  tags: Int!
+}
+
+input PlaceCreateNestedManyWithoutProviderInput {
+  connect: [PlaceWhereUniqueInput!]
+}
+
+input PlaceCreateNestedOneWithoutReservationsInput {
+  connect: PlaceWhereUniqueInput
+}
+
+input PlaceCreateNestedOneWithoutReviewsInput {
+  connect: PlaceWhereUniqueInput
+}
+
+type PlaceImage {
+  id: ID!
+  place: Place!
+  placeId: String!
+  url: String!
+}
+
+input PlaceImageListRelationFilter {
+  every: PlaceImageWhereInput
+  none: PlaceImageWhereInput
+  some: PlaceImageWhereInput
+}
+
+input PlaceImageWhereInput {
+  AND: [PlaceImageWhereInput!]
+  NOT: [PlaceImageWhereInput!]
+  OR: [PlaceImageWhereInput!]
+  id: StringFilter
+  place: PlaceScalarRelationFilter
+  placeId: StringFilter
+  url: StringFilter
+}
+
+input PlaceListRelationFilter {
+  every: PlaceWhereInput
+  none: PlaceWhereInput
+  some: PlaceWhereInput
+}
+
+input PlaceOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input PlaceScalarRelationFilter {
+  is: PlaceWhereInput
+  isNot: PlaceWhereInput
+}
+
+input PlaceWhereInput {
+  AND: [PlaceWhereInput!]
+  NOT: [PlaceWhereInput!]
+  OR: [PlaceWhereInput!]
+  category: StringFilter
+  createdAt: DateTimeFilter
+  description: StringFilter
+  id: StringFilter
+  images: PlaceImageListRelationFilter
+  name: StringFilter
+  price: FloatFilter
+  provider: UserScalarRelationFilter
+  providerId: StringFilter
+  reservations: ReservationListRelationFilter
+  reviews: ReviewListRelationFilter
+  tags: TagListRelationFilter
+  updatedAt: DateTimeFilter
+}
+
+input PlaceWhereUniqueInput {
+  AND: [PlaceWhereInput!]
+  NOT: [PlaceWhereInput!]
+  OR: [PlaceWhereInput!]
+  category: StringFilter
+  createdAt: DateTimeFilter
+  description: StringFilter
+  id: String
+  images: PlaceImageListRelationFilter
+  name: StringFilter
+  price: FloatFilter
+  provider: UserScalarRelationFilter
+  providerId: StringFilter
+  reservations: ReservationListRelationFilter
+  reviews: ReviewListRelationFilter
+  tags: TagListRelationFilter
+  updatedAt: DateTimeFilter
+}
+
+type Query {
+  user(id: String!): User!
+  users(cursor: UserWhereUniqueInput, distinct: [UserScalarFieldEnum!], orderBy: [UserOrderByWithRelationInput!], skip: Int, take: Int, where: UserWhereInput): [User!]!
+}
+
+type RefreshToken {
+  createdAt: DateTime!
+  expiresAt: DateTime!
+  id: ID!
+  token: String!
+  user: User!
+  userId: String!
+}
+
+input RefreshTokenCreateManyUserInput {
+  createdAt: DateTime
+  expiresAt: DateTime!
+  id: String
+  token: String!
+}
+
+input RefreshTokenCreateManyUserInputEnvelope {
+  data: [RefreshTokenCreateManyUserInput!]!
+  skipDuplicates: Boolean
+}
+
+input RefreshTokenCreateNestedManyWithoutUserInput {
+  connect: [RefreshTokenWhereUniqueInput!]
+  connectOrCreate: [RefreshTokenCreateOrConnectWithoutUserInput!]
+  create: [RefreshTokenCreateWithoutUserInput!]
+  createMany: RefreshTokenCreateManyUserInputEnvelope
+}
+
+input RefreshTokenCreateOrConnectWithoutUserInput {
+  create: RefreshTokenCreateWithoutUserInput!
+  where: RefreshTokenWhereUniqueInput!
+}
+
+input RefreshTokenCreateWithoutUserInput {
+  createdAt: DateTime
+  expiresAt: DateTime!
+  id: String
+  token: String!
+}
+
+input RefreshTokenListRelationFilter {
+  every: RefreshTokenWhereInput
+  none: RefreshTokenWhereInput
+  some: RefreshTokenWhereInput
+}
+
+input RefreshTokenOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input RefreshTokenWhereInput {
+  AND: [RefreshTokenWhereInput!]
+  NOT: [RefreshTokenWhereInput!]
+  OR: [RefreshTokenWhereInput!]
+  createdAt: DateTimeFilter
+  expiresAt: DateTimeFilter
+  id: StringFilter
+  token: StringFilter
+  user: UserScalarRelationFilter
+  userId: StringFilter
+}
+
+input RefreshTokenWhereUniqueInput {
+  AND: [RefreshTokenWhereInput!]
+  NOT: [RefreshTokenWhereInput!]
+  OR: [RefreshTokenWhereInput!]
+  createdAt: DateTimeFilter
+  expiresAt: DateTimeFilter
+  id: String
+  token: String
+  user: UserScalarRelationFilter
+  userId: StringFilter
+}
+
+type Reservation {
+  createdAt: DateTime!
+  date: DateTime!
+  id: ID!
+  payment: Payment
+  place: Place!
+  placeId: String!
+  status: String!
+  updatedAt: DateTime!
+  user: User!
+  userId: String!
+}
+
+input ReservationCreateManyUserInput {
+  createdAt: DateTime
+  date: DateTime!
+  id: String
+  placeId: String!
+  status: String!
+  updatedAt: DateTime
+}
+
+input ReservationCreateManyUserInputEnvelope {
+  data: [ReservationCreateManyUserInput!]!
+  skipDuplicates: Boolean
+}
+
+input ReservationCreateNestedManyWithoutUserInput {
+  connect: [ReservationWhereUniqueInput!]
+  connectOrCreate: [ReservationCreateOrConnectWithoutUserInput!]
+  create: [ReservationCreateWithoutUserInput!]
+  createMany: ReservationCreateManyUserInputEnvelope
+}
+
+input ReservationCreateNestedOneWithoutPaymentInput {
+  connect: ReservationWhereUniqueInput
+  connectOrCreate: ReservationCreateOrConnectWithoutPaymentInput
+  create: ReservationCreateWithoutPaymentInput
+}
+
+input ReservationCreateOrConnectWithoutPaymentInput {
+  create: ReservationCreateWithoutPaymentInput!
+  where: ReservationWhereUniqueInput!
+}
+
+input ReservationCreateOrConnectWithoutUserInput {
+  create: ReservationCreateWithoutUserInput!
+  where: ReservationWhereUniqueInput!
+}
+
+input ReservationCreateWithoutPaymentInput {
+  createdAt: DateTime
+  date: DateTime!
+  id: String
+  place: PlaceCreateNestedOneWithoutReservationsInput!
+  status: String!
+  updatedAt: DateTime
+  user: UserCreateNestedOneWithoutReservationsInput!
+}
+
+input ReservationCreateWithoutUserInput {
+  createdAt: DateTime
+  date: DateTime!
+  id: String
+  payment: PaymentCreateNestedOneWithoutReservationInput
+  place: PlaceCreateNestedOneWithoutReservationsInput!
+  status: String!
+  updatedAt: DateTime
+}
+
+input ReservationListRelationFilter {
+  every: ReservationWhereInput
+  none: ReservationWhereInput
+  some: ReservationWhereInput
+}
+
+input ReservationOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input ReservationScalarRelationFilter {
+  is: ReservationWhereInput
+  isNot: ReservationWhereInput
+}
+
+input ReservationWhereInput {
+  AND: [ReservationWhereInput!]
+  NOT: [ReservationWhereInput!]
+  OR: [ReservationWhereInput!]
+  createdAt: DateTimeFilter
+  date: DateTimeFilter
+  id: StringFilter
+  payment: PaymentNullableScalarRelationFilter
+  place: PlaceScalarRelationFilter
+  placeId: StringFilter
+  status: StringFilter
+  updatedAt: DateTimeFilter
+  user: UserScalarRelationFilter
+  userId: StringFilter
+}
+
+input ReservationWhereUniqueInput {
+  AND: [ReservationWhereInput!]
+  NOT: [ReservationWhereInput!]
+  OR: [ReservationWhereInput!]
+  createdAt: DateTimeFilter
+  date: DateTimeFilter
+  id: String
+  payment: PaymentNullableScalarRelationFilter
+  place: PlaceScalarRelationFilter
+  placeId: StringFilter
+  status: StringFilter
+  updatedAt: DateTimeFilter
+  user: UserScalarRelationFilter
+  userId: StringFilter
+}
+
+type Review {
+  comment: String!
+  createdAt: DateTime!
+  id: ID!
+  place: Place!
+  placeId: String!
+  rating: Int!
+  user: User!
+  userId: String!
+}
+
+input ReviewCreateManyUserInput {
+  comment: String!
+  createdAt: DateTime
+  id: String
+  placeId: String!
+  rating: Int!
+}
+
+input ReviewCreateManyUserInputEnvelope {
+  data: [ReviewCreateManyUserInput!]!
+  skipDuplicates: Boolean
+}
+
+input ReviewCreateNestedManyWithoutUserInput {
+  connect: [ReviewWhereUniqueInput!]
+  connectOrCreate: [ReviewCreateOrConnectWithoutUserInput!]
+  create: [ReviewCreateWithoutUserInput!]
+  createMany: ReviewCreateManyUserInputEnvelope
+}
+
+input ReviewCreateOrConnectWithoutUserInput {
+  create: ReviewCreateWithoutUserInput!
+  where: ReviewWhereUniqueInput!
+}
+
+input ReviewCreateWithoutUserInput {
+  comment: String!
+  createdAt: DateTime
+  id: String
+  place: PlaceCreateNestedOneWithoutReviewsInput!
+  rating: Int!
+}
+
+input ReviewListRelationFilter {
+  every: ReviewWhereInput
+  none: ReviewWhereInput
+  some: ReviewWhereInput
+}
+
+input ReviewOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input ReviewWhereInput {
+  AND: [ReviewWhereInput!]
+  NOT: [ReviewWhereInput!]
+  OR: [ReviewWhereInput!]
+  comment: StringFilter
+  createdAt: DateTimeFilter
+  id: StringFilter
+  place: PlaceScalarRelationFilter
+  placeId: StringFilter
+  rating: IntFilter
+  user: UserScalarRelationFilter
+  userId: StringFilter
+}
+
+input ReviewWhereUniqueInput {
+  AND: [ReviewWhereInput!]
+  NOT: [ReviewWhereInput!]
+  OR: [ReviewWhereInput!]
+  comment: StringFilter
+  createdAt: DateTimeFilter
+  id: String
+  place: PlaceScalarRelationFilter
+  placeId: StringFilter
+  rating: IntFilter
+  user: UserScalarRelationFilter
+  userId: StringFilter
+}
+
+type Role {
+  _count: RoleCount!
+  id: ID!
+  name: String!
+  users: [User!]
+}
+
+type RoleCount {
+  users: Int!
+}
+
+input RoleCreateNestedManyWithoutUsersInput {
+  connect: [RoleWhereUniqueInput!]
+  connectOrCreate: [RoleCreateOrConnectWithoutUsersInput!]
+  create: [RoleCreateWithoutUsersInput!]
+}
+
+input RoleCreateOrConnectWithoutUsersInput {
+  create: RoleCreateWithoutUsersInput!
+  where: RoleWhereUniqueInput!
+}
+
+input RoleCreateWithoutUsersInput {
+  id: String
+  name: String!
+}
+
+input RoleListRelationFilter {
+  every: RoleWhereInput
+  none: RoleWhereInput
+  some: RoleWhereInput
+}
+
+input RoleOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input RoleWhereInput {
+  AND: [RoleWhereInput!]
+  NOT: [RoleWhereInput!]
+  OR: [RoleWhereInput!]
+  id: StringFilter
+  name: StringFilter
+  users: UserListRelationFilter
+}
+
+input RoleWhereUniqueInput {
+  AND: [RoleWhereInput!]
+  NOT: [RoleWhereInput!]
+  OR: [RoleWhereInput!]
+  id: String
+  name: String
+  users: UserListRelationFilter
+}
+
+enum SortOrder {
+  asc
+  desc
+}
+
+input SortOrderInput {
+  nulls: NullsOrder
+  sort: SortOrder!
+}
+
+input StringFilter {
+  contains: String
+  endsWith: String
+  equals: String
+  gt: String
+  gte: String
+  in: [String!]
+  lt: String
+  lte: String
+  not: NestedStringFilter
+  notIn: [String!]
+  search: String
+  startsWith: String
+}
+
+input StringNullableFilter {
+  contains: String
+  endsWith: String
+  equals: String
+  gt: String
+  gte: String
+  in: [String!]
+  lt: String
+  lte: String
+  not: NestedStringNullableFilter
+  notIn: [String!]
+  search: String
+  startsWith: String
+}
+
+type Tag {
+  id: ID!
+  name: String!
+  place: Place!
+  placeId: String!
+}
+
+input TagListRelationFilter {
+  every: TagWhereInput
+  none: TagWhereInput
+  some: TagWhereInput
+}
+
+input TagWhereInput {
+  AND: [TagWhereInput!]
+  NOT: [TagWhereInput!]
+  OR: [TagWhereInput!]
+  id: StringFilter
+  name: StringFilter
+  place: PlaceScalarRelationFilter
+  placeId: StringFilter
+}
+
+type User {
+  Payment: [Payment!]
+  Place: [Place!]
+  Role: [Role!]
+  _count: UserCount!
+  createdAt: DateTime!
+  email: String!
+  firstName: String!
+  id: ID!
+  images: [UserImage!]
+  isVerified: Boolean!
+  lastName: String
+  password: String!
+  phone: String
+  reservations: [Reservation!]
+  reviews: [Review!]
+  tokens: [RefreshToken!]
+  updatedAt: DateTime!
+  username: String!
+}
+
+type UserCount {
+  Payment: Int!
+  Place: Int!
+  Role: Int!
+  images: Int!
+  reservations: Int!
+  reviews: Int!
+  tokens: Int!
+}
+
+input UserCreateInput {
+  Payment: PaymentCreateNestedManyWithoutUserInput
+  Place: PlaceCreateNestedManyWithoutProviderInput
+  Role: RoleCreateNestedManyWithoutUsersInput
+  createdAt: DateTime
+  email: String!
+  firstName: String!
+  id: String
+  images: UserImageCreateNestedManyWithoutUserInput
+  isVerified: Boolean
+  lastName: String
+  password: String!
+  phone: String
+  reservations: ReservationCreateNestedManyWithoutUserInput
+  reviews: ReviewCreateNestedManyWithoutUserInput
+  tokens: RefreshTokenCreateNestedManyWithoutUserInput
+  updatedAt: DateTime
+  username: String!
+}
+
+input UserCreateNestedOneWithoutPaymentInput {
+  connect: UserWhereUniqueInput
+  connectOrCreate: UserCreateOrConnectWithoutPaymentInput
+  create: UserCreateWithoutPaymentInput
+}
+
+input UserCreateNestedOneWithoutReservationsInput {
+  connect: UserWhereUniqueInput
+  connectOrCreate: UserCreateOrConnectWithoutReservationsInput
+  create: UserCreateWithoutReservationsInput
+}
+
+input UserCreateOrConnectWithoutPaymentInput {
+  create: UserCreateWithoutPaymentInput!
+  where: UserWhereUniqueInput!
+}
+
+input UserCreateOrConnectWithoutReservationsInput {
+  create: UserCreateWithoutReservationsInput!
+  where: UserWhereUniqueInput!
+}
+
+input UserCreateWithoutPaymentInput {
+  Place: PlaceCreateNestedManyWithoutProviderInput
+  Role: RoleCreateNestedManyWithoutUsersInput
+  createdAt: DateTime
+  email: String!
+  firstName: String!
+  id: String
+  images: UserImageCreateNestedManyWithoutUserInput
+  isVerified: Boolean
+  lastName: String
+  password: String!
+  phone: String
+  reservations: ReservationCreateNestedManyWithoutUserInput
+  reviews: ReviewCreateNestedManyWithoutUserInput
+  tokens: RefreshTokenCreateNestedManyWithoutUserInput
+  updatedAt: DateTime
+  username: String!
+}
+
+input UserCreateWithoutReservationsInput {
+  Payment: PaymentCreateNestedManyWithoutUserInput
+  Place: PlaceCreateNestedManyWithoutProviderInput
+  Role: RoleCreateNestedManyWithoutUsersInput
+  createdAt: DateTime
+  email: String!
+  firstName: String!
+  id: String
+  images: UserImageCreateNestedManyWithoutUserInput
+  isVerified: Boolean
+  lastName: String
+  password: String!
+  phone: String
+  reviews: ReviewCreateNestedManyWithoutUserInput
+  tokens: RefreshTokenCreateNestedManyWithoutUserInput
+  updatedAt: DateTime
+  username: String!
+}
+
+type UserImage {
+  id: ID!
+  type: String!
+  url: String!
+  user: User!
+  userId: String!
+}
+
+input UserImageCreateManyUserInput {
+  id: String
+  type: String!
+  url: String!
+}
+
+input UserImageCreateManyUserInputEnvelope {
+  data: [UserImageCreateManyUserInput!]!
+  skipDuplicates: Boolean
+}
+
+input UserImageCreateNestedManyWithoutUserInput {
+  connect: [UserImageWhereUniqueInput!]
+  connectOrCreate: [UserImageCreateOrConnectWithoutUserInput!]
+  create: [UserImageCreateWithoutUserInput!]
+  createMany: UserImageCreateManyUserInputEnvelope
+}
+
+input UserImageCreateOrConnectWithoutUserInput {
+  create: UserImageCreateWithoutUserInput!
+  where: UserImageWhereUniqueInput!
+}
+
+input UserImageCreateWithoutUserInput {
+  id: String
+  type: String!
+  url: String!
+}
+
+input UserImageListRelationFilter {
+  every: UserImageWhereInput
+  none: UserImageWhereInput
+  some: UserImageWhereInput
+}
+
+input UserImageOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input UserImageWhereInput {
+  AND: [UserImageWhereInput!]
+  NOT: [UserImageWhereInput!]
+  OR: [UserImageWhereInput!]
+  id: StringFilter
+  type: StringFilter
+  url: StringFilter
+  user: UserScalarRelationFilter
+  userId: StringFilter
+}
+
+input UserImageWhereUniqueInput {
+  AND: [UserImageWhereInput!]
+  NOT: [UserImageWhereInput!]
+  OR: [UserImageWhereInput!]
+  id: String
+  type: StringFilter
+  url: StringFilter
+  user: UserScalarRelationFilter
+  userId: StringFilter
+}
+
+input UserListRelationFilter {
+  every: UserWhereInput
+  none: UserWhereInput
+  some: UserWhereInput
+}
+
+enum UserOrderByRelevanceFieldEnum {
+  email
+  firstName
+  id
+  lastName
+  password
+  phone
+  username
+}
+
+input UserOrderByRelevanceInput {
+  fields: [UserOrderByRelevanceFieldEnum!]!
+  search: String!
+  sort: SortOrder!
+}
+
+input UserOrderByWithRelationInput {
+  Payment: PaymentOrderByRelationAggregateInput
+  Place: PlaceOrderByRelationAggregateInput
+  Role: RoleOrderByRelationAggregateInput
+  _relevance: UserOrderByRelevanceInput
+  createdAt: SortOrder
+  email: SortOrder
+  firstName: SortOrder
+  id: SortOrder
+  images: UserImageOrderByRelationAggregateInput
+  isVerified: SortOrder
+  lastName: SortOrderInput
+  password: SortOrder
+  phone: SortOrderInput
+  reservations: ReservationOrderByRelationAggregateInput
+  reviews: ReviewOrderByRelationAggregateInput
+  tokens: RefreshTokenOrderByRelationAggregateInput
+  updatedAt: SortOrder
+  username: SortOrder
+}
+
+enum UserScalarFieldEnum {
+  createdAt
+  email
+  firstName
+  id
+  isVerified
+  lastName
+  password
+  phone
+  updatedAt
+  username
+}
+
+input UserScalarRelationFilter {
+  is: UserWhereInput
+  isNot: UserWhereInput
+}
+
+input UserWhereInput {
+  AND: [UserWhereInput!]
+  NOT: [UserWhereInput!]
+  OR: [UserWhereInput!]
+  Payment: PaymentListRelationFilter
+  Place: PlaceListRelationFilter
+  Role: RoleListRelationFilter
+  createdAt: DateTimeFilter
+  email: StringFilter
+  firstName: StringFilter
+  id: StringFilter
+  images: UserImageListRelationFilter
+  isVerified: BoolFilter
+  lastName: StringNullableFilter
+  password: StringFilter
+  phone: StringNullableFilter
+  reservations: ReservationListRelationFilter
+  reviews: ReviewListRelationFilter
+  tokens: RefreshTokenListRelationFilter
+  updatedAt: DateTimeFilter
+  username: StringFilter
+}
+
+input UserWhereUniqueInput {
+  AND: [UserWhereInput!]
+  NOT: [UserWhereInput!]
+  OR: [UserWhereInput!]
+  Payment: PaymentListRelationFilter
+  Place: PlaceListRelationFilter
+  Role: RoleListRelationFilter
+  createdAt: DateTimeFilter
+  email: String
+  firstName: StringFilter
+  id: String
+  images: UserImageListRelationFilter
+  isVerified: BoolFilter
+  lastName: StringNullableFilter
+  password: StringFilter
+  phone: StringNullableFilter
+  reservations: ReservationListRelationFilter
+  reviews: ReviewListRelationFilter
+  tokens: RefreshTokenListRelationFilter
+  updatedAt: DateTimeFilter
+  username: String
+}

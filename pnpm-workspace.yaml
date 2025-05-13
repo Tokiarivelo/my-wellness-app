@@ -1,0 +1,20 @@
+packages:
+  - apps/*
+  - libs/*
+onlyBuiltDependencies:
+  - '@apollo/protobufjs'
+  - '@apollo/rover'
+  - '@nestjs/core'
+  - '@parcel/watcher'
+  - '@prisma/client'
+  - '@prisma/engines'
+  - '@swc/core'
+  - '@tailwindcss/oxide'
+  - bcrypt
+  - core-js
+  - cypress
+  - esbuild
+  - nx
+  - prisma
+  - sharp
+  - unrs-resolver

@@ -1,0 +1,152 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/client"
+
+  runtime                = "nodejs"
+  moduleFormat           = "cjs"
+  generatedFileExtension = "ts"
+  importFileExtension    = "ts"
+}
+
+generator nestgraphql {
+  provider              = "prisma-nestjs-graphql"
+  output                = "../src/dtos"
+  dtoInputNameSuffix    = "Input"
+  dtoModelNameSuffix    = "Model"
+  emitGraphQLTypes      = "true"
+  emitInputAndArgsTypes = "true"
+  prismaClientImport    = "../../prisma-module"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Role {
+  id    String @id @default(uuid())
+  name  String @unique
+  users User[] @relation("UserRoles")
+}
+
+model User {
+  id           String         @id @default(uuid())
+  email        String         @unique
+  firstName    String
+  lastName     String?
+  phone        String?
+  username     String         @unique
+  password     String
+  isVerified   Boolean        @default(false)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  Payment      Payment[]
+  Place        Place[]
+  tokens       RefreshToken[]
+  reservations Reservation[]
+  reviews      Review[]
+  images       UserImage[]
+  Role         Role[]         @relation("UserRoles")
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  expiresAt DateTime
+  userId    String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId], map: "RefreshToken_userId_fkey")
+}
+
+model UserImage {
+  id     String @id @default(uuid())
+  url    String
+  type   String
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  @@index([userId], map: "UserImage_userId_fkey")
+}
+
+model Place {
+  id           String               @id @default(uuid())
+  name         String
+  description  String
+  category     String
+  price        Float
+  location     Unsupported("point")
+  providerId   String
+  createdAt    DateTime             @default(now())
+  updatedAt    DateTime             @updatedAt
+  provider     User                 @relation(fields: [providerId], references: [id])
+  images       PlaceImage[]
+  reservations Reservation[]
+  reviews      Review[]
+  tags         Tag[]
+
+  @@index([providerId], map: "Place_providerId_fkey")
+}
+
+model PlaceImage {
+  id      String @id @default(uuid())
+  url     String
+  placeId String
+  place   Place  @relation(fields: [placeId], references: [id])
+
+  @@index([placeId], map: "PlaceImage_placeId_fkey")
+}
+
+model Tag {
+  id      String @id @default(uuid())
+  name    String
+  placeId String
+  place   Place  @relation(fields: [placeId], references: [id])
+
+  @@index([placeId], map: "Tag_placeId_fkey")
+}
+
+model Reservation {
+  id        String   @id @default(uuid())
+  userId    String
+  placeId   String
+  status    String
+  date      DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  payment   Payment?
+  place     Place    @relation(fields: [placeId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@index([placeId], map: "Reservation_placeId_fkey")
+  @@index([userId], map: "Reservation_userId_fkey")
+}
+
+model Payment {
+  id            String      @id @default(uuid())
+  userId        String
+  reservationId String      @unique
+  amount        Float
+  method        String
+  status        String
+  createdAt     DateTime    @default(now())
+  reservation   Reservation @relation(fields: [reservationId], references: [id])
+  user          User        @relation(fields: [userId], references: [id])
+
+  @@index([userId], map: "Payment_userId_fkey")
+}
+
+model Review {
+  id        String   @id @default(uuid())
+  userId    String
+  placeId   String
+  comment   String
+  rating    Int
+  createdAt DateTime @default(now())
+  place     Place    @relation(fields: [placeId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@index([placeId], map: "Review_placeId_fkey")
+  @@index([userId], map: "Review_userId_fkey")
+}
