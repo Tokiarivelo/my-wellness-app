@@ -222,3 +222,15 @@ Pour générer les code/tpes graphql du data-transfert, on lance
 ```sh
 nx codegen data-transfert --verbose
 ```
+
+## Lancement du serveur graphql
+
+- Pour lancer avec nx
+  ```sh
+  nx serve graphql-server --skip-nx-cache --verbose
+  ```
+- Pour lancer en mode nest seulement
+
+  ```sh
+  pnpm start:graphql:dev
+  ```
