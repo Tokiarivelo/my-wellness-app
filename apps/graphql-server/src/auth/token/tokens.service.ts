@@ -1,5 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService, RefreshToken } from '@wellness-app/data-transfert';
+import {
+  PrismaService,
+  RefreshToken,
+} from '@wellness-app/data-transfert/index';
 
 @Injectable()
 export class TokensService {

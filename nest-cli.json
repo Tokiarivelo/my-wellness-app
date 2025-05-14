@@ -6,24 +6,25 @@
   "compilerOptions": {
     "tsConfigPath": "apps/graphql-server/tsconfig.app.json"
   },
-
   "projects": {
     "graphql-server": {
       "type": "application",
       "root": "apps/graphql-server",
       "sourceRoot": "apps/graphql-server/src",
-      "entryFile": "src/main.ts",
+      "entryFile": "main",
       "compilerOptions": {
-        "tsConfigPath": "apps/graphql-server/tsconfig.app.json"
+        "tsConfigPath": "apps/graphql-server/tsconfig.app.json",
+        "watchAssets": true
       }
     },
     "data-transfert": {
       "type": "library",
       "root": "libs/data-transfert",
       "sourceRoot": "libs/data-transfert/src",
-      "entryFile": "index.ts",
+      "entryFile": "index",
       "compilerOptions": {
-        "tsConfigPath": "libs/data-transfert/tsconfig.lib.json"
+        "tsConfigPath": "libs/data-transfert/tsconfig.lib.json",
+        "watchAssets": true
       }
     }
   }

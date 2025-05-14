@@ -3,7 +3,7 @@ import {
   UserCreateInput,
   FindManyUserArgs,
   User,
-} from '@wellness-app/data-transfert';
+} from '@wellness-app/data-transfert/index';
 import { UsersService } from './users.service';
 
 @Resolver(() => User)

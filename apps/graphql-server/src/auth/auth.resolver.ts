@@ -1,7 +1,11 @@
 import { Args, Context, Mutation, Resolver } from '@nestjs/graphql';
 import { AuthService } from './auth.service';
 import { TokensService } from './token/tokens.service';
-import { LoginInput, User, RegisterInput } from '@wellness-app/data-transfert';
+import {
+  LoginInput,
+  User,
+  RegisterInput,
+} from '@wellness-app/data-transfert/index';
 import { UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from './guards/jwt-auth.guard';
 

@@ -20,7 +20,7 @@
     "customConditions": ["development"],
     "outDir": "./dist",
     "paths": {
-      "@wellness-app/data-transfert": ["libs/data-transfert/src/index.ts"],
+      // "@wellness-app/data-transfert": ["libs/data-transfert/src/index.ts"],
       "@wellness-app/data-transfert/*": ["libs/data-transfert/src/*"]
     }
   }
