@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
 import { UsersService } from '../user/users.service';
-import { LoginInput, RegisterInput } from '@wellness-app/shared-dtos';
+import { LoginInput, RegisterInput } from '@wellness-app/data-transfert/index';
 
 @Injectable()
 export class AuthService {

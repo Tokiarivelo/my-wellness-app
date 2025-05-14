@@ -1,8 +1,11 @@
 import { Args, Context, Mutation, Resolver } from '@nestjs/graphql';
 import { AuthService } from './auth.service';
 import { TokensService } from './token/tokens.service';
-import { LoginInput, User } from '@wellness-app/shared-dtos';
-import { RegisterInput } from '@wellness-app/shared-dtos';
+import {
+  LoginInput,
+  User,
+  RegisterInput,
+} from '@wellness-app/data-transfert/index';
 import { UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from './guards/jwt-auth.guard';
 
@@ -29,7 +32,7 @@ export class AuthResolver {
 
   @Mutation(() => Boolean)
   @UseGuards(JwtAuthGuard)
-  async logout(@Context() { req }): Promise<boolean> {
+  async logout(@Context() { req }: any): Promise<boolean> {
     await this.tokensService.revoke(req.user.userId);
     return true;
   }

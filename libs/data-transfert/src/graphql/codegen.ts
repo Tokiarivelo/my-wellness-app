@@ -2,11 +2,20 @@ import type { CodegenConfig } from '@graphql-codegen/cli';
 
 const config: CodegenConfig = {
   schema: 'http://localhost:4000/graphql', // API NestJS
-  documents: ['libs/data-transfert/graphql/**/*.graphql'],
+  documents: ['libs/data-transfert/src/graphql/**/*.graphql'],
   generates: {
-    'libs/data-transfert/graphql/generated/': {
+    'libs/data-transfert/src/graphql/generated/': {
       preset: 'client',
-      plugins: [],
+      plugins: [
+        'typescript',
+        'typescript-operations',
+        'typescript-react-apollo',
+      ],
+      config: {
+        withHooks: true, // ✅ active la génération des hooks
+        withHOC: false,
+        withComponent: false,
+      },
     },
   },
   hooks: {

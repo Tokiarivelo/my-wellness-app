@@ -18,11 +18,10 @@
     "strict": true,
     "target": "es2022",
     "customConditions": ["development"],
+    "outDir": "./dist",
     "paths": {
-      "@wellness-app/data-transfert": ["libs/data-transfert/src/index.ts"],
-      "@wellness-app/data-transfert/prisma": [
-        "libs/data-transfert/src/prisma-module/index.ts"
-      ]
+      // "@wellness-app/data-transfert": ["libs/data-transfert/src/index.ts"],
+      "@wellness-app/data-transfert/*": ["libs/data-transfert/src/*"]
     }
   }
 }

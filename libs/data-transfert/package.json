@@ -2,19 +2,19 @@
   "name": "@wellness-app/data-transfert",
   "version": "0.0.1",
   "private": true,
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
   "scripts": {
-    "prisma:patch-enums": "sed -i \"s/Array<\\`\\${\\(\\w*\\)}\\`>/\\1[]/g\" ./src/generated/client/**/*.ts"
+    "codegen": "graphql-codegen --config ./src/codegen.ts"
   },
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "development": "./src/index.ts",
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
+      "development": "./index.js",
+      "types": "./index.d.ts",
+      "import": "./index.js",
+      "default": "./index.js"
     }
   },
   "dependencies": {
@@ -24,6 +24,8 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "reflect-metadata": "^0.1.13",
-    "@graphql-codegen/cli": "^5.0.6"
+    "@graphql-codegen/cli": "^5.0.6",
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "graphql": "^16.6.0"
   }
 }

@@ -6,7 +6,7 @@
     "emitDecoratorMetadata": true,
     "baseUrl": ".",
     "rootDir": "src",
-    "outDir": "dist",
+    "outDir": "../../dist/libs/data-transfert/src",
     "tsBuildInfoFile": "../../dist/libs/data-transfert/tsconfig.lib.tsbuildinfo",
     "emitDeclarationOnly": false,
     "forceConsistentCasingInFileNames": true,
@@ -17,6 +17,6 @@
     "strictBindCallApply": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*.ts", "src/generated/client/**/*.d.ts"],
+  "include": ["src/**/*.ts", "src/generated/client/**/*"],
   "references": []
 }

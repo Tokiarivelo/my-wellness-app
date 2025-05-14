@@ -8,15 +8,15 @@ generator client {
   importFileExtension    = "ts"
 }
 
-generator nestgraphql {
-  provider              = "prisma-nestjs-graphql"
-  output                = "../src/dtos"
-  dtoInputNameSuffix    = "Input"
-  dtoModelNameSuffix    = "Model"
-  emitGraphQLTypes      = "true"
-  emitInputAndArgsTypes = "true"
-  prismaClientImport    = "../../prisma-module"
-}
+// generator nestgraphql {
+//   provider              = "prisma-nestjs-graphql"
+//   output                = "../src/dtos"
+//   dtoInputNameSuffix    = "Input"
+//   dtoModelNameSuffix    = "Model"
+//   emitGraphQLTypes      = "true"
+//   emitInputAndArgsTypes = "true"
+//   prismaClientImport    = "../../prisma-module"
+// }
 
 datasource db {
   provider = "mysql"

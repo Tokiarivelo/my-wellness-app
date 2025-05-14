@@ -1,12 +1,12 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { PrismaService } from '@wellness-app/data-transfert';
+import { PrismaService } from '@wellness-app/data-transfert/index';
 import * as bcrypt from 'bcrypt';
 import {
   User,
   UserCreateInput,
   FindManyUserArgs,
   DeleteOneUserArgs,
-} from '@wellness-app/data-transfert';
+} from '@wellness-app/data-transfert/index';
 
 @Injectable()
 export class UsersService {

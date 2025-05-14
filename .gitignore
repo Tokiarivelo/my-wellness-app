@@ -48,3 +48,5 @@ test-output
 
 # prisma
 # generated
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md
